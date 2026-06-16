@@ -1,5 +1,5 @@
 # jenkins_triggers
-Repository to test automatic pipeline triggers
+Repository to test automatic pipeline triggers 
 
 1. To Avoid the Error "Host key verification failed", First go to Jenkins -> Verwaltung > Configure global Security -> scroll down until "Git Host Key Verification Configuration" 
     and select the first option ("Accept first connection)  
@@ -23,6 +23,7 @@ Most popular triggers:
             Use grok to solve this issue and redirect the provided external url to localhost:
             - Install grok: `https://ngrok.com/download/linux` and add also the authtoken
             - Start the endpoint: `ngrok http 8080` --> look in the provided information after the execution of this command,
-              and use the given url for the github webhooks; all the calls will be redirected to localhost:8080
-        3. Go back to jenkins, select the build job -> Configure -> Triggers -> enable "GitHub hook trigger for GITScm polling"
+              and use the given url for the github webhooks (do not forget to add `/github-webhook/` at the end of the url;
+              all the calls will be redirected to localhost:8080
+        3. Go back to jenkins, select the build job -> Configure -> Triggers ->  enable "GitHub hook trigger for GITScm polling"
             
